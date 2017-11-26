@@ -1,0 +1,13 @@
+<h1>Book Crowd Funding</h1>
+
+<% if @books.count == 0%>
+    <h4>No books of this genre needing funding</h4>
+<%else%>
+    <h1 class="current-category"><%= params[:category]%></h1>
+    <% @books.each do |b|%>
+        <h3><%= link_to b.title, book_path(b) %></h3>
+        <a href="/books/<%= b.id%>%">
+            <%= image_tag b.book_img.url(:book_index) %>
+        </a>
+    <%end%>
+<% end %>
