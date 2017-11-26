@@ -5,6 +5,7 @@
     <%= f.file_field :book_img %>
     <%= f.input :description, label: "Description"%>
     <%= f.input :name, label: "Your Name"%>
+    <%= f.input :goal, label: "Goal"%>
     <%= f.select :category_id, @categories %><br>
     <%= f.button :submit %>
 <% end %>

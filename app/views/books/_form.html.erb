@@ -3,6 +3,7 @@
     <%= f.file_field :book_img %>
     <%= f.input :description, label: "Description"%>
     <%= f.input :name, label: "Your Name"%>
+    <%= f.input :goal, label: "Goal"%>
     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a Genre") %><br>
     <%= f.button :submit %>
 <% end %>
