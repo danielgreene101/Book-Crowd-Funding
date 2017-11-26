@@ -3,11 +3,20 @@
 <% if @books.count == 0%>
     <h4>No books of this genre needing funding</h4>
 <%else%>
+
+    <div class="row">
     <h1 class="current-category"><%= params[:category]%></h1>
     <% @books.each do |b|%>
-        <h3><%= link_to b.title, book_path(b) %></h3>
-        <a href="/books/<%= b.id%>%">
-            <%= image_tag b.book_img.url(:book_index) %>
-        </a>
+
+        <div class="col-md-3">
+            <h3><%= link_to b.title, book_path(b) %></h3>
+            <a href="/books/<%= b.id%>%">
+                <%= image_tag b.book_img.url(:book_index), class: "book" %>
+            </a>
+        </div>
+
     <%end%>
+
+    </div>
+
 <% end %>
